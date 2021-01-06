@@ -1,0 +1,24 @@
+---
+- name: cronjob for restarting acala service
+  cron:
+    name: "restart acala"
+    minute: "{{ acala_restart_minute }}"
+    hour: "{{ acala_restart_hour }}"
+    day: "{{ acala_restart_day }}"
+    month: "{{ acala_restart_month }}"
+    weekday: "{{ acala_restart_weekday }}"
+    job: "/bin/systemctl restart acala.service"
+  when: "acala_restart_enabled|default(false)|bool"
+
+- name: register public ip
+  uri:
+    url: https://api.ipify.org?format=json
+  register: public_ip
+
+- name: create acala service file
+  template:
+    src: acala.service.j2
+    dest: /etc/systemd/system/acala.service
+    owner: root
+    group: root
+    mode: 0600

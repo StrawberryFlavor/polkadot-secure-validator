@@ -1,0 +1,5 @@
+- name: backup keystore
+  copy:
+    src: "/home/acala/.local/share/acala/chains/{{ acala_network_id }}/keystore"
+    dest: /home/acala/keystore
+    remote_src: yes

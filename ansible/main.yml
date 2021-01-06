@@ -10,7 +10,7 @@
   hosts: validator
   become: yes
   roles:
-  - polkadot-validator
+  - acala-validator
 
 - name: node-exporter
   hosts: validator

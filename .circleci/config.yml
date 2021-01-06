@@ -26,7 +26,7 @@ jobs:
 
   polkadotValidatorIntegrationTest:
     environment:
-      ROLE_PATH: ansible/roles/polkadot-validator
+      ROLE_PATH: ansible/roles/acala-validator
     <<: *ansibleIntegrationTest
 
   nodeExporterIntegrationTest:
@@ -36,7 +36,7 @@ jobs:
   
   updateBinaryIntegrationTest:
     environment:
-      ROLE_PATH: ansible/roles/polkadot-update-binary
+      ROLE_PATH: ansible/roles/acala-update-binary
     <<: *ansibleIntegrationTest  
 
   integrationTest:

@@ -1,0 +1,11 @@
+---
+- name: create acala group
+  group:
+    name: acala
+    state: present
+
+- name: add acala user
+  user:
+    name: acala
+    group: acala
+    append: yes

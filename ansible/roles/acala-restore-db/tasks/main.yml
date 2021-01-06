@@ -1,0 +1,28 @@
+- name: download db
+  get_url:
+    url: "https://storage.googleapis.com/{{ chain }}-db/db.tar.gz"
+    dest: "/home/acala/.local/share/acala/chains/{{ acala_network_id }}//"
+    mode: '0700'
+    owner: 'acala'
+    group: 'acala'
+
+- name: stop acala service
+  systemd:
+    name: acala.service
+    state: stopped
+
+- name: unpack db
+  shell: |
+    set -o pipefail
+    cd /home/acala/.local/share/acala/chains/{{ acala_network_id }}/
+    mv db db.back
+    tar xzf db.tar.gz
+    rm db.tar.gz
+    chown -R acala:acala db/
+  args:
+    executable: /bin/bash
+
+- name: start acala service
+  systemd:
+    name: acala.service
+    state: started

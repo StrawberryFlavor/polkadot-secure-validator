@@ -2,4 +2,4 @@
   become: yes
   strategy: free
   roles:
-  - polkadot-restore-db
+  - acala-restore-db

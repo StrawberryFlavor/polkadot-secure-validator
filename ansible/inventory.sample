@@ -36,27 +36,27 @@ project=alice-in-wonderland
 
 # Can be left as is.
 ansible_ssh_common_args='-o StrictHostKeyChecking=no -o ConnectTimeout=15'
-build_dir=$HOME/.config/polkadot-secure-validator/build/w3f/ansible
+build_dir=$HOME/.config/acala-secure-validator/build/w3f/ansible
 
-# Specify which `polkadot` binary to install. Checksum is verified during execution.
-polkadot_binary_url='https://github.com/paritytech/polkadot/releases/download/v0.8.2/polkadot'
-polkadot_binary_checksum='sha256:349b786476de9188b79817cab48fc6fc030908ac0e8e2a46a1600625b1990758'
+# Specify which `acala` binary to install. Checksum is verified during execution.
+acala_binary_url='https://github.com/paritytech/acala/releases/download/v0.8.2/acala'
+acala_binary_checksum='sha256:349b786476de9188b79817cab48fc6fc030908ac0e8e2a46a1600625b1990758'
 
 # Specify the chain/network.
 #
-# For Polkadot:
+# For acala:
 # ```
-# chain=polkadot
-# polkadot_network_id=polkadot
+# chain=acala
+# acala_network_id=acala
 # ```
 #
 # For Kusama:
 # ```
 # chain=kusama
-# polkadot_network_id=ksmcc3
+# acala_network_id=ksmcc3
 # ```
-polkadot_network_id=polkadot
-chain=polkadot
+acala_network_id=mandala
+chain=mandala
 
 # Node exporter settings. Disabled by default.
 node_exporter_enabled='false'
@@ -65,10 +65,10 @@ node_exporter_password='node_exporter_password'
 node_exporter_binary_url='https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz'
 node_exporter_binary_checksum='sha256:b2503fd932f85f4e5baf161268854bf5d22001869b84f00fd2d1f57b51b72424'
 
-# Polkadot service restart settings. Enabled to restart every hour.
-polkadot_restart_enabled='true'
-polkadot_restart_minute='0'
-polkadot_restart_hour='*'
-polkadot_restart_day='*'
-polkadot_restart_month='*'
-polkadot_restart_weekday='*'
+# acala service restart settings. Enabled to restart every hour.
+acala_restart_enabled='true'
+acala_restart_minute='0'
+acala_restart_hour='*'
+acala_restart_day='*'
+acala_restart_month='*'
+acala_restart_weekday='*'

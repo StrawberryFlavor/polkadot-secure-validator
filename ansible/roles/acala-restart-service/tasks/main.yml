@@ -1,0 +1,4 @@
+- name: restart acala service
+  systemd:
+    name: acala.service
+    state: restarted

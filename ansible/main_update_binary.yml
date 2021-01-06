@@ -10,4 +10,4 @@
   hosts: validator
   become: yes
   roles:
-  - polkadot-update-binary
+  - acala-update-binary
